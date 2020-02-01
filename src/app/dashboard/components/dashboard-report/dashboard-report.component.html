@@ -1,0 +1,27 @@
+<div class="dashbpard-report">
+  <form class="form generate-report" [formGroup]="form" (submit)="generateReport($event)">
+    <mat-form-field>
+      <input matInput formControlName="fromDate" [dpDayPicker]="config" theme="dp-material" placeholder="از تاریخ" />
+      <mat-error *ngIf="fromDate.invalid" color="warn">{{ fromDate.errors | json }}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="toDate" [dpDayPicker]="config" theme="dp-material" placeholder="تا تاریخ" />
+      <mat-error *ngIf="toDate.invalid" color="warn">{{ toDate.errors | json }}</mat-error>
+      <button matSuffix mat-icon-button type="submit" [disabled]="form.invalid" title="تهیه گزارش" (click)="generateReport($event)">
+        <mat-icon>sync</mat-icon>
+      </button>
+    </mat-form-field>
+  </form>
+  <form class="form download-report" [formGroup]="downForm" (submit)="download($event)">
+    <mat-form-field>
+      <input type="number" matInput formControlName="reportCode" placeholder="دانلود گزارش" (keydown.esc)="downForm.reset();"
+      />
+      <!-- <button matSuffix mat-icon-button *ngIf="downForm.valid" title="کپی کد">
+        <mat-icon class="mat-icon-rtl-mirror">file_copy</mat-icon>
+      </button> -->
+      <a [href]="reportUrl" target="_blank" matSuffix mat-icon-button [disabled]="downForm.invalid" title="دانلود گزارش">
+        <mat-icon class="mat-icon-rtl-mirror">cloud_download</mat-icon>
+      </a>
+    </mat-form-field>
+  </form>
+</div>

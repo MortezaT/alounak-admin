@@ -1,0 +1,6 @@
+@import '~@angular/material/theming';
+@import './app/dashboard/dashboard/dashboard-theme.scss';
+@mixin create-theme($theme) {
+    @include angular-material-theme($theme);
+    @include admin-dashboard-theme($theme);
+}

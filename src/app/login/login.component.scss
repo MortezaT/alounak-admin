@@ -1,0 +1,19 @@
+.form {
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    >* {
+        min-width: 30%;
+        margin: 0 auto 2em;
+    }
+    .avatar {
+        display: flex;
+        justify-content: center;
+        mat-icon {
+            font-size: 7em;
+            width: 1em;
+            height: 1em;
+        }
+    }
+}

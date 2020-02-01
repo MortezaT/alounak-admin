@@ -1,0 +1,11 @@
+<div class="file-uploader">
+  <button class="file" [title]="title" mat-button (click)="fileInput.click()">
+    <ng-container *ngIf="url; else noUrl">
+      <img class="image" [src]="url">
+    </ng-container>
+    <ng-template #noUrl>
+      <mat-icon class="image icon">add_photo_alternate</mat-icon>
+    </ng-template>
+  </button>
+  <input type="file" hidden (change)="fileChange$.next($event.target.files)" #fileInput>
+</div>

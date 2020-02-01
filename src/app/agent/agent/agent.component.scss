@@ -1,0 +1,31 @@
+.form {
+    padding: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    >* {
+        min-width: 27%;
+        margin-bottom: 2em;
+    }
+    mat-form-field {
+        display: block;
+    }
+    /* .username,
+    .name,
+    .lastname {
+        min-width: 27%;
+    } */
+    .premiere,
+    .certificate {
+        min-width: 40%;
+    }
+    .certificate {
+        padding-left: 4em;
+    }
+    .about-me {
+        width: 100%;
+    }
+    .submit {
+        margin: 0 auto 0 4em;
+    }
+}

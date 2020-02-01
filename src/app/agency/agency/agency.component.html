@@ -1,0 +1,46 @@
+<alounak-page>
+  <div class="page">
+    <alounak-photo-select [url]="logo" (onChange)="fileChange$.next($event)"></alounak-photo-select>
+    <form class="form" [formGroup]="form" (ngSubmit)="submit()" dir="rtl">
+      <!-- <mat-form-field class="form-field"> -->
+      <!-- <input hidden type="file" formControlName="file"> -->
+
+      <!-- </mat-form-field> -->
+      <mat-form-field class="form-field">
+        <input type="tel" matInput formControlName="username" placeholder="نام کاربری" (keydown.esc)="clear('username');" required/>
+        <span matPrefix>
+          <mat-icon>phone</mat-icon>
+        </span>
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <input type="text" matInput formControlName="password" placeholder="رمز عبور" (keydown.esc)="clear('password');" required/>
+        <span matPrefix>
+          <mat-icon>lock</mat-icon>
+        </span>
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <input type="text" matInput formControlName="name" placeholder="نام آژانس" (keydown.esc)="clear('name');" required/>
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <input type="tel" matInput formControlName="phoneNumber" placeholder="شماره تلفن" (keydown.esc)="clear('phoneNumber');" required/>
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <input type="email" matInput formControlName="email" placeholder="ایمیل" (keydown.esc)="clear('email');" />
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <input type="text" matInput formControlName="urlAddressPart" placeholder="آدرس آلونکی" (keydown.esc)="clear('urlAddressPart');"
+          required/>
+      </mat-form-field>
+      <mat-form-field class="form-field address">
+        <input type="text" matInput formControlName="address" placeholder="آدرس" (keydown.esc)="clear('address');" required/>
+      </mat-form-field>
+      <mat-form-field class="form-field description">
+        <textarea matInput [matTextareaAutosize]="true" [matAutosizeMinRows]="3" formControlName="description" placeholder="توضیحات"></textarea>
+      </mat-form-field>
+      <button class="form-submit" type="submit" mat-raised-button [disabled]="form.invalid || form.untouched">
+        ارسال
+        <mat-icon class="mat-icon-rtl-mirror">send</mat-icon>
+      </button>
+    </form>
+  </div>
+</alounak-page>

@@ -1,0 +1,42 @@
+.dashboard-card {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 0;
+    min-height: 100%;
+    .card-header {
+        // margin: -24px;
+        // margin-bottom: 1em;
+        ::ng-deep .mat-card-header-text {
+            width: 100%;
+        }
+        .card-title {
+            display: flex;
+            flex-flow: row nowrap;
+            margin-bottom: 0;
+            margin-right: 1em;
+            :first-child {
+                flex: 1;
+            }
+            * {
+                margin: auto 0;
+            }
+        }
+    }
+    /* .more-button {
+        position: absolute;
+        top: 5px;
+        left: 10px;
+    } */
+    .dashboard-card-content {
+        padding: 1.6em;
+        padding-bottom: 2em;
+        display: flex;
+        flex-flow: column nowrap;
+        flex: 1;
+        justify-content: flex-end;
+        * {
+            float: 1;
+            justify-self: stretch;
+        }
+    }
+}

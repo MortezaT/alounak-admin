@@ -1,0 +1,9 @@
+@import '~@angular/material/theming';
+@mixin admin-dashboard-theme($theme) {
+    $primary: map-get($map: $theme, $key: primary);
+    $accent: map-get($map: $theme, $key: accent);
+    .card-header {
+        // color: mat-color($primary, 'A400-contrast');
+        background-color: mat-color($primary, A400);
+    }
+}

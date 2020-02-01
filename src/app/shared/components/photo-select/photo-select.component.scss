@@ -1,0 +1,16 @@
+.file-uploader {
+    display: flex;
+    .file {
+        border-radius: 16px;
+        margin: auto;
+        padding: 0;
+        display: inline-block;
+        border: 1px dashed aliceblue;
+        >.image {
+            width: 192;
+            height: 192;
+            font-size: 192;
+            margin-bottom: 4px;
+        }
+    }
+}

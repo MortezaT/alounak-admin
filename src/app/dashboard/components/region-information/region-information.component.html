@@ -1,0 +1,19 @@
+<form class="form" [formGroup]="form" (submit)="onSubmit($event)" dir="rtl">
+  <mat-radio-group class="platform-radio" formControlName="platformType">
+    <mat-radio-button *ngFor="let option of platformOptions" [value]="option.value">اطلاعات مناطق ({{option.title}})</mat-radio-button>
+  </mat-radio-group>
+  <mat-radio-group class="platform-radio" formControlName="regionLevel">
+    <mat-radio-button *ngFor="let option of levelOptions" [value]="option.value">{{option.title}}</mat-radio-button>
+  </mat-radio-group>
+  <mat-form-field class="form-field">
+    <input matInput formControlName="region" placeholder="منطقه" (keydown.esc)="regionControl.reset();" [matAutocomplete]="regionsComplete"/>
+    <button matSuffix mat-icon-button [disabled]="form.invalid">
+      <mat-icon class="mat-icon-rtl-mirror">send</mat-icon>
+    </button>
+    <mat-autocomplete #regionsComplete="matAutocomplete" [displayWith]="displayFn">
+      <mat-option *ngFor="let option of regions$ | async" [value]="option">
+        {{ option.title }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>

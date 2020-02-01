@@ -1,0 +1,27 @@
+.sidenav-container {
+    height: 100%;
+}
+
+.sidenav {
+    min-width: 250px;
+    width: 20%;
+    box-shadow: 3px 0 6px rgba(0, 0, 0, .24), -3px 0 6px rgba(0, 0, 0, .24);
+    .active {
+        background-color: rebeccapurple;
+        color: aliceblue;
+        font-weight: bold;
+    }
+}
+
+.nav-header {
+    display: flex;
+    justify-content: space-between;
+    * {
+        margin: auto 0;
+    }
+}
+
+.title {
+    flex: 1;
+    padding-right: 1em;
+}

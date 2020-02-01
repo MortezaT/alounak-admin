@@ -1,0 +1,35 @@
+/*
+    @import "~@angular/material/prebuilt-themes/purple-green.css";
+    @import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+    @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+    @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+*/
+
+@import '~@angular/material/theming';
+@import './create-theme.scss';
+@include mat-core();
+/* @function mat-palette($base-palette, $default: 500, $lighter: 100, $darker: 700) */
+
+$alounak-primary: mat-palette($mat-light-blue, A400, A100, A900);
+$alounak-accent: mat-palette($mat-indigo, A400, A200, A700);
+// The warn palette is optional (defaults to red).
+$alounak-warn: mat-palette($mat-red);
+// Create the theme object (a Sass map containing all of the palettes).
+$alounak-theme: mat-light-theme($alounak-primary, $alounak-accent, $alounak-warn);
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+
+/* $alounak-dark-primary: mat-palette($mat-blue-grey);
+$alounak-dark-accent: mat-palette($mat-amber, A200, A100, A400);
+$alounak-dark-warn: mat-palette($mat-deep-orange); */
+$alounak-dark-theme: mat-dark-theme($alounak-primary, $alounak-accent, $alounak-warn);
+// Include the alternative theme styles inside of a block with a CSS class. You can make this
+// CSS class whatever you want. In this example, any component inside of an element with
+// `.unicorn-dark-theme` will be affected by this alternate dark theme instead of the default theme.
+.alounak-theme {
+    @include create-theme($alounak-theme);
+}
+.alounak-dark-theme {
+    @include create-theme($alounak-dark-theme);
+}

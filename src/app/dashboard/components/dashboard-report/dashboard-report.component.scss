@@ -1,0 +1,22 @@
+.dashbpard-report {
+    display: flex;
+    justify-content: space-between;
+    .form {
+        input {
+            direction: ltr;
+        }
+        &.generate-report {
+            flex: 3;
+            display: flex;
+            justify-content: space-between;
+        }
+        &.download-report {
+            flex: 3;
+            display: flex;
+            justify-content: flex-end;
+            :first-child {
+                min-width: 70%;
+            }
+        }
+    }
+}

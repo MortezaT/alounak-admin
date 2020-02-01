@@ -1,0 +1,31 @@
+<alounak-page>
+  <div class="grid-container">
+    <mat-grid-list [cols]="12" rowHeight="110px">
+      <mat-grid-tile [colspan]="4" [rowspan]="2">
+        <admin-dashboard-card class="dashboard-card" title="ورود با">
+          <admin-login-with></admin-login-with>
+        </admin-dashboard-card>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="4" [rowspan]="2">
+        <admin-dashboard-card class="dashboard-card" title="رفع بلاک">
+          <admin-unblock></admin-unblock>
+        </admin-dashboard-card>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="4" [rowspan]="2">
+        <admin-dashboard-card class="dashboard-card" title="اطلاعات کارشناس">
+          <admin-dashboard-agent></admin-dashboard-agent>
+        </admin-dashboard-card>
+      </mat-grid-tile>
+      <mat-grid-tile class="report-grid" [colspan]="12" [rowspan]="2">
+        <admin-dashboard-card class="dashboard-card" title="گزارش">
+          <admin-dashboard-report></admin-dashboard-report>
+        </admin-dashboard-card>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="12" [rowspan]="2">
+        <admin-dashboard-card class="dashboard-card" title="اطلاعات مناطق">
+          <admin-region-information></admin-region-information>
+        </admin-dashboard-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</alounak-page>

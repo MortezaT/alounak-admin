@@ -1,0 +1,16 @@
+<alounak-page>
+  <form class="form" [formGroup]="form" (submit)="login()" dir="rtl">
+    <div class="avatar">
+      <mat-icon>account_circle</mat-icon>
+    </div>
+    <mat-form-field>
+      <input type="text" matInput formControlName="username" placeholder="نام کاربری" required/>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="password" matInput formControlName="password" placeholder="رمز عبور" required/>
+    </mat-form-field>
+    <button type="submit" color="primary" mat-raised-button [disabled]="form.invalid">
+      ورود
+    </button>
+  </form>
+</alounak-page>
